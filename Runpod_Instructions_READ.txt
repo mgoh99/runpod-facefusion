@@ -1,0 +1,45 @@
+
+Please register for RunPod at: https://runpod.io?ref=1aka98lq
+
+Select a GPU with a minimum of 24 GB VRAM, such as the RTX 3090.
+
+Choose a RunPod template Very important:
+
+RunPod Pytorch 2.4.0
+runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu
+
+Edit the pod configuration:
+Set the volume disk size to 50 GB or your preferred size.
+
+Upload all files to the workspace folder.
+
+To install, run the following commands:
+
+export HF_HOME="/workspace"
+chmod +x Runpod_Install.sh
+./Runpod_Install.sh
+
+To use after installation:
+
+Open a new terminal and run the following code each time you start:
+
+Run the following commands for FaceFusion app:
+
+cd /workspace
+export HF_HOME="/workspace"
+export PYTHONWARNINGS="ignore"
+export CUDA_VISIBLE_DEVICES=0
+cd /workspace/facefusion
+source venv/bin/activate
+python facefusion.py run --execution-providers cuda
+
+RunPod Proxy port not working therefore we overwrite file automatically and start with a Gradio live share
+
+Use the Gradio live share link provided after started
+
+If you rent multiple GPU machine, you can start different instances on each GPU by changing export CUDA_VISIBLE_DEVICES=1 2 3 4 etc
+
+If you restart the pod you have to run below command 1 time after each restart before running above starting command
+
+apt update --yes
+apt install ffmpeg --yes
