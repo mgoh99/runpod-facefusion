@@ -1,0 +1,52 @@
+
+
+Watch this instructional video to learn how to use Massed Compute:
+https://youtu.be/0t5l6CP9eBg
+
+Register for Massed Compute using the following link:
+https://vm.massedcompute.com/signup?linkId=lp_034338&sourceId=secourses&tenantId=massed-compute
+
+(This may be necessary to access our special coupon for A6000 GPU at $0.31 per hour)
+
+Important Notes:
+
+Ensure each copy-paste action is accurate, as Massed Compute may not always copy-paste correctly.
+
+Select an A6000 GPU or A6000 GPU ALT (if other one is not available) and use our code SECourses for huge discount.
+
+Use ThinClient or log in to Patreon on Massed Compute to download files to your Massed Compute instance.
+
+Setup Instructions:
+
+a. Create a folder (e.g., "FaceFuseAI") in a location of your choice (such as Apps or Desktop).
+
+Do not make installation folder name as facefusion - same folder name sometimes causes problems.
+
+b. Place all downloaded files into this folder.
+
+c. Open a terminal in the folder containing your files.
+
+Installation:
+
+Run the following commands in the terminal:
+
+chmod +x Massed_Compute_Install.sh
+./Massed_Compute_Install.sh
+
+Usage After Installation:
+
+a. Open a new terminal in the folder where you downloaded and executed the files.
+
+b. Run the following commands for Starting
+
+export PYTHONWARNINGS="ignore"
+export CUDA_VISIBLE_DEVICES=0
+cd facefusion
+source venv/bin/activate
+python3 facefusion.py run --execution-providers cuda
+
+It will start both on Gradio live share and local URL. You can use in either way 
+
+The Gradio live URL can be accessed from your computer, tablet, or phone.
+
+If you rent multiple GPU machine, you can start different instances on each GPU by changing export CUDA_VISIBLE_DEVICES=1 2 3 4 etc
