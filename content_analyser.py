@@ -102,4 +102,5 @@ def analyse_image(image_path : str) -> bool:
 
 @lru_cache(maxsize = None)
 def analyse_video(video_path : str, start_frame : int, end_frame : int) -> bool:
+	
 	return False
