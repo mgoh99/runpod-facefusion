@@ -15,9 +15,16 @@ Upload all files to the workspace folder.
 
 To install, run the following commands:
 
+cd /workspace
+git clone https://github.com/mgoh99/runpod-facefusion.git .
 export HF_HOME="/workspace"
 chmod +x Runpod_Install.sh
 ./Runpod_Install.sh
+
+NSFW:
+
+mv /workspace/content_analyser.py /workspace/facefusion/facefusion/
+mv /workspace/preview.py /workspace/facefusion/facefusion/uis/components/
 
 To use after installation:
 
